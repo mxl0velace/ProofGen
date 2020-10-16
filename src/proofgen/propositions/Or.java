@@ -42,5 +42,15 @@ public class Or implements Proposition {
 		return(left.equals(a.left) && right.equals(a.right));
 		
 	}
+	
+	//These are useful for auto-building proofs
+	
+		public Proposition getLeft() {
+			return left;
+		}
+		
+		public Proposition getRight() {
+			return right;
+		}
 
 }

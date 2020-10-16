@@ -7,7 +7,7 @@ import proofgen.rules.InvalidPropositionException;
 
 /**
  * And Elimination [∧E]: A∧B, so A OR A∧B, so B.
- * Left = False, Right = True
+ * Left = True, Right = False
  * @author harper
  *
  */

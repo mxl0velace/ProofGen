@@ -2,6 +2,11 @@ package proofgen.propositions;
 
 import proofgen.Proposition;
 
+/**
+ * Or: A∨B
+ * @author harper
+ *
+ */
 public class Or implements Proposition {
 
 	private Proposition left;
@@ -20,6 +25,22 @@ public class Or implements Proposition {
 	@Override
 	public String JavaPrint() {
 		return left.JavaPrint() + "∨" + right.JavaPrint();
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o == this) {
+			return true;
+		}
+		
+		if(!(o instanceof Or)) {
+			return false;
+		}
+		
+		Or a = (Or) o;
+		
+		return(left.equals(a.left) && right.equals(a.right));
+		
 	}
 
 }

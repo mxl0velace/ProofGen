@@ -1,7 +1,14 @@
 package proofgen.propositions;
 
+import java.util.Arrays;
+
 import proofgen.Proposition;
 
+/**
+ * Sequent: accepts a list of premises which result in a conclusion. Only used in sequent calculus.
+ * @author harper
+ *
+ */
 public class Sequent implements Proposition {
 	
 	private Proposition[] premises;
@@ -39,6 +46,22 @@ public class Sequent implements Proposition {
 		sb.append(conclusion.JavaPrint());
 		
 		return sb.toString();
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o == this) {
+			return true;
+		}
+		
+		if(!(o instanceof Sequent)) {
+			return false;
+		}
+		
+		Sequent a = (Sequent) o;
+		
+		return(Arrays.equals(premises, a.premises) && conclusion.equals(a.conclusion));
+		
 	}
 
 }
